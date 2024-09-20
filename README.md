@@ -1,5 +1,7 @@
 # radio-fm
 
+personal customized radio player 
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
