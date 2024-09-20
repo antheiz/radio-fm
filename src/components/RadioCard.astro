@@ -1,26 +1,40 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  artists: string[];
+  url: string;
+}
+
+const { title, description, artists, url } : Props = Astro.props;
+---
+
 <div class="rounded-md border-2 border-gray-100">
   <div class="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
-    <button type="button"class="block shrink-0 border border-gray-400 rounded-md">
-      <svg xmlns="http://www.w3.org/2000/svg" class="size-10 text-gray-900" viewBox="0 0 24 24"><path fill="currentColor" d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82"/></svg>
+    <button type="button" class="block shrink-0 border border-gray-400 rounded-md">
+      <svg xmlns="http://www.w3.org/2000/svg" class="size-9 text-gray-900" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82" />
+      </svg>
     </button>
 
     <div>
       <h3 class="font-medium sm:text-lg">
-        <a href="#" class="hover:underline text-gray-900">
-            Question about Livewire Rendering and Alpine JS
+        <a href={url} class="hover:underline text-gray-900" target="_blank">
+          {title}
         </a>
       </h3>
 
       <p class="line-clamp-2 text-sm text-gray-700">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, accusantium temporibus
-        iure delectus ut totam natus nesciunt ex? Ducimus, enim.
+        {description}
       </p>
 
       <div class="mt-2 sm:flex sm:items-center sm:gap-2">
         <p class="mt-2 text-xs font-medium text-gray-500 sm:mt-0">
-        Artist <a href="#" class="underline hover:text-gray-700">Barry</a>,
-            <a href="#" class="underline hover:text-gray-700">Sandra</a> and
-            <a href="#" class="underline hover:text-gray-700">August</a>
+          Artist {artists.map((artist, index) => (
+            <>
+              <a href="#" class="underline hover:text-gray-700">{artist}</a>{index < artists.length - 1 ? ', ' : ''}
+            </>
+          ))}
         </p>
       </div>
     </div>

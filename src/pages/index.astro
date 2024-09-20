@@ -1,10 +1,67 @@
 ---
 import RadioCard from '../components/RadioCard.astro';
 import Layout from '../layouts/Layout.astro';
+
+const radioList = [
+    {
+      "title": "BBC Radio 1 - The Official Chart with Jack Saunders",
+      "description": "The UK’s Official Chart, bringing you the top 40 tracks of the week as determined by sales and streams.",
+      "artists": [
+        "Jack Saunders"
+      ],
+      "url": "https://www.bbc.co.uk/sounds/play/live:bbc_radio_one"
+    },
+    {
+      "title": "NPR - All Things Considered",
+      "description": "NPR's flagship program that brings listeners the biggest news stories of the day, insightful interviews, and analysis.",
+      "artists": [
+        "Mary Louise Kelly",
+        "Ari Shapiro"
+      ],
+      "url": "https://www.npr.org/programs/all-things-considered/"
+    },
+    {
+      "title": "KEXP 90.3 FM - Live Performances",
+      "description": "Catch live in-studio performances from a diverse range of artists, hosted by KEXP DJs and streaming online.",
+      "artists": [
+        "Various live artists",
+        "KEXP DJs"
+      ],
+      "url": "https://www.kexp.org/"
+    },
+    {
+      "title": "SiriusXM - Howard Stern Show",
+      "description": "The Howard Stern Show is one of the most popular talk shows, featuring interviews with celebrities, commentary, and humor.",
+      "artists": [
+        "Howard Stern",
+        "Robin Quivers"
+      ],
+      "url": "https://www.siriusxm.com/howard-stern"
+    }
+]
 ---
 
 <Layout title="Welcome radio.FM" description="This is home page of radio.FM">
-    <div class="max-w-3xl px-4 sm:px-6 lg:px-8 mx-auto">
-        <RadioCard/>
+    <div class="flex flex-col gap-3 max-w-3xl px-4 sm:px-6 lg:px-8 mx-auto">
+        {radioList.map((radio) => (
+            <RadioCard
+                title={radio.title}
+                description={radio.description}
+                artists={radio.artists}
+                url={radio.url}
+            />
+        ))}
     </div>
+
+    {radioList.length > 6 && (
+        <div class="text-center mt-10">
+            <a
+            href="#"
+            class="inline-block rounded border border-gray-400 px-8 py-2.5 text-sm font-medium text-gray-600 transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:text-gray-500"
+            >
+            Load more
+            </a>
+        </div>
+    )}
+
 </Layout>
