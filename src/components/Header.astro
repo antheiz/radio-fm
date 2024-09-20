@@ -10,12 +10,19 @@
       </div>
 
       <div class="flex items-center gap-4">
-        <a href="/about/"
-          class="inline-flex items-center justify-center gap-1.5 rounded border border-gray-200 bg-white px-5 py-3 text-gray-900 transition hover:text-gray-700 focus:outline-none focus:ring hover:bg-stone-100"
+        <a
+          class="group relative inline-block text-sm font-medium text-gray-900 focus:outline-none active:text-gray-500"
+          href="/about/"
         >
-          <span class="text-sm font-medium"> About radio.FM </span>
+          <span class="absolute inset-0 border border-gray-300/55"></span>
+          <span
+            class="block border border-gray-300/55 bg-white px-5 py-2 md:py-3 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1"
+          >
+            About radio.FM
+          </span>
         </a>
       </div>
     </div>
+    <hr class="my-4"/>
   </div>
 </header>
