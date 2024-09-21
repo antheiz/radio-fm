@@ -1,5 +1,6 @@
 ---
 import RadioCard from '../components/RadioCard.astro';
+import RadioControl from '../components/RadioControl.astro';
 import Layout from '../layouts/Layout.astro';
 
 const radioList = [
@@ -54,14 +55,16 @@ const radioList = [
     </div>
 
     {radioList.length > 6 && (
-        <div class="text-center mt-10">
+        <div class="max-w-3xl mx-auto text-right mt-8 px-4 lg:px-8">
             <a
             href="#"
-            class="inline-block rounded border border-gray-400 px-8 py-2.5 text-sm font-medium text-gray-600 transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:text-gray-500"
+            class="inline-block rounded border border-gray-200 px-8 py-2.5 text-sm font-medium text-gray-600 transition hover:rotate-2 hover:scale-110 focus:outline-none active:text-gray-500"
             >
             Load more
             </a>
         </div>
     )}
+
+    <RadioControl/>
 
 </Layout>
