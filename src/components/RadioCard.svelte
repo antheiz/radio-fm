@@ -1,7 +1,6 @@
 <script lang="ts">
   export let title: string;
   export let description: string;
-  export let artists: string[];
   export let url: string;
 </script>
 
