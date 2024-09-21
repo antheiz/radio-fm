@@ -1,13 +1,9 @@
----
-interface Props {
-  title: string;
-  description: string;
-  artists: string[];
-  url: string;
-}
-
-const { title, description, artists, url } : Props = Astro.props;
----
+<script lang="ts">
+  export let title: string;
+  export let description: string;
+  export let artists: string[];
+  export let url: string;
+</script>
 
 <div class="rounded-md border-2 border-gray-100">
   <div class="flex items-start gap-4 p-4 sm:p-6">
