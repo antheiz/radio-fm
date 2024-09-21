@@ -84,7 +84,7 @@
   <div class="flex items-start gap-4 p-4 sm:p-6">
     <button
       type="button"
-      class="block shrink-0 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 hover:bg-gray-100"
+      class="block shrink-0 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 transition-colors duration-200 hover:bg-gray-100"
       on:click={togglePlay}
       disabled={isLoading}
       aria-label={isPlaying ? "Pause" : "Play"}
