@@ -5,24 +5,24 @@ import Layout from '../layouts/Layout.astro';
 
 const radioList = [
     {
-      "title": "BBC Radio 1 - The Official Chart with Jack Saunders",
-      "description": "The UK’s Official Chart, bringing you the top 40 tracks of the week as determined by sales and streams.",
-      "url": "https://www.bbc.co.uk/sounds/play/live:bbc_radio_one"
+      "title": "RRI Pro 1 Jayapura - Voice of Development",
+      "description": "Radio Republik Indonesia Pro 1 Jayapura broadcasts news, information, and entertainment for the people of Papua.",
+      "url": "https://stream-node0.rri.co.id/streaming/23/9023/rrijayapurapro1.mp3"
     },
     {
-      "title": "NPR - All Things Considered",
-      "description": "NPR's flagship program that brings listeners the biggest news stories of the day, insightful interviews, and analysis.",
-      "url": "https://www.npr.org/programs/all-things-considered/"
+      "title": "RRI Pro 2 Jayapura - Youth Creativity",
+      "description": "An RRI channel focusing on music and entertainment for young people in Jayapura and surrounding areas.",
+      "url": "https://stream-node0.rri.co.id/streaming/23/9023/rrijayapurapro2.mp3"
     },
     {
-      "title": "KEXP 90.3 FM - Live Performances",
-      "description": "Catch live in-studio performances from a diverse range of artists, hosted by KEXP DJs and streaming online.",
-      "url": "https://www.kexp.org/"
+      "title": "Dengerin Musik Indonesia - Yogyakarta's Sound",
+      "description": "A Yogyakarta-based radio station showcasing the rich diversity of Indonesian music, from traditional to contemporary genres.",
+      "url": "https://stream.denger.in:8888/dmi"
     },
     {
-      "title": "SiriusXM - Howard Stern Show",
-      "description": "The Howard Stern Show is one of the most popular talk shows, featuring interviews with celebrities, commentary, and humor.",
-      "url": "https://www.siriusxm.com/howard-stern"
+      "title": "Dilemaradio - New York's Rap Hub",
+      "description": "A New York-based radio station specializing in rap music, featuring the latest tracks and emerging artists from the hip-hop scene.",
+      "url": "https://dilemaradiolive.radioca.st/stream/1/"
     }
 ]
 ---
@@ -30,7 +30,7 @@ const radioList = [
 <Layout title="Welcome radio.FM" description="This is home page of radio.FM">
     <div class="flex flex-col gap-3 max-w-3xl px-4 sm:px-6 lg:px-8 mx-auto">
         {radioList.map((radio) => (
-            <RadioCard
+            <RadioCard client:load
                 title={radio.title}
                 description={radio.description}
                 url={radio.url}
@@ -48,7 +48,4 @@ const radioList = [
             </a>
         </div>
     )}
-
-    <RadioControl/>
-
 </Layout>
