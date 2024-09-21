@@ -33,7 +33,7 @@
         console.log(`Audio loaded successfully for ${title}`);
         isLoading = false;
       },
-      onloaderror: (id, error) => {
+      onloaderror: (id: number, error: unknown) => {
         console.error(`Error loading audio for ${title}:`, error);
         errorMessage = 'Error loading audio. Please check your connection and try again.';
         isLoading = false;
@@ -51,7 +51,7 @@
         console.log(`Audio stopped for ${title}`);
         isPlaying = false;
       },
-      onplayerror: (id, error) => {
+      onplayerror: (id: number, error: unknown) => {
         console.error(`Error playing audio for ${title}:`, error);
         errorMessage = 'Error playing audio. Please try again later.';
         isPlaying = false;
